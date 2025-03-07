@@ -11,6 +11,16 @@ jobs:
         uses: actions/setup-python@v4
         with: 
           python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          pip install beautifulsoup4
+          pip install pymysql
+          pip install python-dotenv
+          # urllib3 and adapters come with requests, but we'll ensure they're installed
+          pip install urllib3
   
       - name: Run EPC Scraper
         env:
