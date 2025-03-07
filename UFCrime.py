@@ -36,7 +36,6 @@ try:
     cursor = conn.cursor()
 except pymysql.Error as e:
     print(f"Database connection failed: {e}")
-    return
 cursor = conn.cursor()
 
 for index, row in df.iterrows():
