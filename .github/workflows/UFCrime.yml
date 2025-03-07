@@ -1,0 +1,29 @@
+name: UF Crime Scraper
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *'
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with: 
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pymysql pandas python-dotenv
+  
+      - name: Run EPC Scraper
+        env:
+          DB1_HOST: ${{ secrets.DB1_HOST }}
+          DB1_USER: ${{ secrets.DB1_USER }}
+          DB1_PASSWORD: ${{ secrets.DB1_PASSWORD }}
+          DB1_NAME: ${{ secrets.DB1_NAME }}
+          URL_UFCRIME: ${{ secrets.URL_UFCRIME }}
+        run: python UFCrime.py
