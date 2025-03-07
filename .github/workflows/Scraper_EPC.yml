@@ -13,4 +13,10 @@ jobs:
           python-version: '3.12'
   
       - name: Run EPC Scraper
+        env:
+          DB1_HOST: ${{ secrets.DB1_HOST }}
+          DB1_USER: ${{ secrets.DB1_USER }}
+          DB1_PASSWORD: ${{ secrets.DB1_PASSWORD }}
+          DB1_NAME: ${{ secrets.DB1_NAME }}
+          URL_EPC: ${{ secrets.URL_EPC }}
         run: python EPC.py
