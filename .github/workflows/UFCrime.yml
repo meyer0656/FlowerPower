@@ -19,7 +19,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pymysql pandas python-dotenv
   
-      - name: Run EPC Scraper
+      - name: Run UF Crime Scraper
         env:
           DB1_HOST: ${{ secrets.DB1_HOST }}
           DB1_USER: ${{ secrets.DB1_USER }}
