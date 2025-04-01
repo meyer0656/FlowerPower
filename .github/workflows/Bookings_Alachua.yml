@@ -2,7 +2,7 @@ name: Alachua County Jail Inmate Scraper
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '1 1 1 1 1'
 jobs:
   run-script:
     runs-on: ubuntu-latest
