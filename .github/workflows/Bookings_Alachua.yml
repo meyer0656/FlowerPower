@@ -18,6 +18,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests
+          pip install datetime
+          pip install pandas
+          pip install pysftp
           pip install beautifulsoup4
           pip install pymysql
           pip install python-dotenv
@@ -29,6 +32,6 @@ jobs:
           DB1_HOST: ${{ secrets.DB1_HOST }}
           DB1_USER: ${{ secrets.DB1_USER }}
           DB1_PASSWORD: ${{ secrets.DB1_PASSWORD }}
-          DB1_NAME: ${{ secrets.DB1_NAME }}
-          URL_JAIL_ALA: ${{ secrets.URL_JAIL_ALA }}
+          DB2_NAME: ${{ secrets.DB2_NAME }}
+          URL_INMATES_ALA: ${{ secrets.URL_INMATES_ALA }}
         run: python Inmates_Alachua.py
