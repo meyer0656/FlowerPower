@@ -109,7 +109,7 @@ def scrape_teacher_data():
                 file_date = parse_date(tds[5].text)
                 print(file_date)
                 
-                if file_date and file_date.startswith('2025'):
+                if file_date and file_date.startswith('2026'):
                     file_link = tds[6].find('a')['href']
                     row_data = (
                         tds[0].text,  # CaseNum
