@@ -13,7 +13,7 @@ import pysftp
 # GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'mugshots'@'0.0.0.0' WITH GRANT OPTION;
 
 # MYSQL LOGIN
-conn = pymysql.connect(host='fladata.com', user='admin',
+conn = pymysql.connect(host='142.93.27.233', user='admin',
                        password='B@tteaux2@', db='FlaData')
 cur = conn.cursor()
 
